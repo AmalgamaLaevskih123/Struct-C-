@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define K 3
+struct Uchenik {
+
+	char Name[20];
+	char Surn[30];
+	int ball;
+	int school;
+	int score;
+};
+int main(void) {
+	int i, t, N;
+
+	system("chcp 1251>nul");
+	struct Uchenik Number[K];
+	Number[1].ball = Number[0].ball = 0;
+	scanf_s("%d", &N);
+	for (i = 0; i < N; i++) {
+		scanf_s("%s%s%d%d", Number[2].Name, Number[2].Surn, &Number[2].ball, &Number[2].school);
+		if (Number[2].school == 50 && Number[2].ball >= Number[0].ball) {
+			if (Number[2].ball = Number[0].ball)
+				Number[0].score++;
+			else
+				Number[0].score = 1;
+			Number[1] = Number[0];
+			Number[0] = Number[2];
+
+		}
+		else if (Number[2].school == 50 && Number[2].ball>Number[1].ball) {
+			if (Number[2].ball = Number[1].ball)
+				Number[1].score++;
+			else
+				Number[1].score = 1;
+
+			Number[1] = Number[2];
+		}
+	}
+	if (Number[0].score > 2)
+		printf(" Количество учеников набравших одинаково боьшое количество баллов: %d\n ", Number[0].score);
+	else if (Number[0].score = 1 && Number[1].score > 1)
+		printf("Имя лучшего ученика: \t%s\n Фамилия лучшего ученика \t%s\n ", Number[0].Name, Number[0].Surn);
+	else
+		printf(" Ученик набравший макисмальное количестов баллов: \t%s %s\n Ученик набравший второе по количеству баллов место: \t%s %s", Number[0].Name, Number[0].Surn, Number[1].Name, Number[1].Surn);
+	system("pause>nul");
+	return 0;
+}
